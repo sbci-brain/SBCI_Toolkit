@@ -36,7 +36,7 @@ for i=1:length(files)
     parc_name = strsplit(files(i).name, '_avg_roi');
     
     % put parcellations in a vector of structs
-    sbci_parc(i).name = parc_name(1);
+    sbci_parc(i).atlas = parc_name(1);
     sbci_parc(i).sorted_idx = parc.sorted_idx;
     sbci_parc(i).labels = parc.labels;
     sbci_parc(i).names = parc.names;
