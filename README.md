@@ -16,7 +16,7 @@ plot_cortical(sbci_surf.inflated, sbci_mapping, `DATA`);
 
 ```
 % example to plot SC or FC matrix with a given parcellation
-plot_sbci_mat(`DATA`, sbci_parc(0), 'roi_mask', [1,35]);
+plot_sbci_mat(`DATA`, sbci_parc(0), 'roi_mask', [1,36]);
 ```
 
 ![SC_FC_example](https://user-images.githubusercontent.com/82663099/115779808-6af02400-a386-11eb-8c0a-cf1ce5eff6e6.png)
