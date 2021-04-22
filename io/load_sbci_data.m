@@ -25,14 +25,16 @@
 function [sbci_parc, sbci_mapping, adjacency] = load_sbci_data(sbci_location, resolution)
 
 % load the mapping and adjacency matrix at the given resolution
-sbci_mapping = load(sprintf('%s/mapping_avg_%.2f.mat', sbci_location, resolution));
-adjacency = load(sprintf('%s/adjacency_%.2f.mat', sbci_location, resolution));
+tmp = load(sprintf('%s/mapping_avg_%.2f.mat', sbci_location, resolution));
+sbci_mapping = tmp.sbci_map;
+tmp = load(sprintf('%s/adjacency_%.2f.mat', sbci_location, resolution));
+adjacency = tmp.adjacency;
 
 % find all the parcellation files
 files = dir(sprintf('%s/*_avg_roi_%.2f.mat', sbci_location, resolution));
 
 for i=1:length(files)
-    parc = load(files(i).name);
+    parc = load(sprintf('%s/%s', sbci_location, files(i).name));
     parc_name = strsplit(files(i).name, '_avg_roi');
     
     % put parcellations in a vector of structs
