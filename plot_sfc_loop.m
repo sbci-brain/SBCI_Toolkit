@@ -14,5 +14,11 @@ addpath('./plotting')
 sbci_surf = load_sbci_surface('example_data');
 
 %load data
-ave_herit = load('ave_heritability.txt');
-plot_cortical(sbci_surf.inflated, sbci_mapping, ave_herit);
+
+load('./sfc_data/SBCI_SFC_global_rest1.mat')
+
+for i=1:900
+    curr_sfc = squeeze(sbci_sfc_gbl_tensor(:,i));
+    plot_cortical(sbci_surf.inflated, sbci_mapping, curr_sfc,'figid',1);
+    pause(0.1);
+end

@@ -30,6 +30,7 @@ addParameter(p, 'legend', "", @ischar);
 addParameter(p, 'clim', double([min(data) max(data)]), @isnumeric);
 addParameter(p, 'cmap', 'jet', @ischar);
 addParameter(p, 'bg', 'white', @ischar);
+addParameter(p, 'figid', 1, @(n)validateattributes(n,{'numeric'},{'nonnegative'}));
 
 % parse optional variables
 parse(p, varargin{:});
@@ -47,7 +48,8 @@ h = 0.6;
 w = 0.20;
 m = 0.02;
 
-fig = figure();
+fig = figure(params.figid);
+clf;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 surf = sbci_surf.lh_surf;
