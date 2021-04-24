@@ -10,7 +10,6 @@ addpath('./plotting')
 % resolution
 [sbci_parc, sbci_mapping, adjacency] = load_sbci_data('example_data', 0.94);
 
-% example to plot data on the inflated cortical surface
 sbci_surf = load_sbci_surface('example_data');
 
 
