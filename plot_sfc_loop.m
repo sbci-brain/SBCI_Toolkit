@@ -17,6 +17,7 @@ load('./sfc_data/SBCI_SFC_global_rest1.mat')
 
 for i=1:900
     curr_sfc = squeeze(sbci_sfc_gbl_tensor(:,i));
-    plot_cortical(sbci_surf.inflated, sbci_mapping, curr_sfc,'figid',1);
+    curr_sfc(isnan(curr_sfc)) = 0;
+    plot_cortical(sbci_surf.inflated, sbci_mapping, curr_sfc, 'figid', 1, 'clim', [-0.8, 0.8]);
     pause(0.1);
 end
