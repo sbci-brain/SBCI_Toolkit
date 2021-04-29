@@ -83,7 +83,7 @@ surf = sbci_surf.rh_surf;
 
 %%%% plot RIGHT hemisphere -90 %%%%
 trisurf(surf.tri, surf.vtx(1,:), surf.vtx(2,:), surf.vtx(3,:),...
-   double(upsampled_data(1:sbci_map.shape(5))), 'EdgeColor', 'none');
+   double(upsampled_data((sbci_map.shape(5)+1):sbci_map.shape(4))), 'EdgeColor', 'none');
 
 view(-90,0)
 
@@ -95,7 +95,7 @@ ax(4) = axes('position', [0.07+3*(w+m) 0.3 w h]);
 
 %%%% plot RIGHT hemisphere 90 %%%%
 trisurf(surf.tri, surf.vtx(1,:), surf.vtx(2,:), surf.vtx(3,:),...
-   double(upsampled_data(1:sbci_map.shape(5))), 'EdgeColor', 'none');
+   double(upsampled_data((sbci_map.shape(5)+1):sbci_map.shape(4))), 'EdgeColor', 'none');
 
 view(90,0)
 
