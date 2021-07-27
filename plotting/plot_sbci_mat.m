@@ -21,7 +21,7 @@
 %
 % ASSUMPTIONS AND LIMITATIONS:
 %   Removes diagonals, assumes the SC and FC matrices are either
-%   symmetric or triangular. and that the parcellation or SC, FC, 
+%   symmetric or triangular, and that the parcellation or SC, FC, 
 %   matrices have not been rearranged in any way from SBCI output.
 %
 function [fig] = plot_sbci_mat(data, sbci_parc, varargin)
@@ -33,6 +33,7 @@ addParameter(p, 'roi_grid', 0, @isnumeric);
 addParameter(p, 'clim', double([min(min(data)) max(max(data))]), @isnumeric);
 addParameter(p, 'cmap', 'parula', @ischar);
 addParameter(p, 'legend', "", @ischar);
+addParameter(p, 'figid', 1, @(n)validateattributes(n,{'numeric'},{'nonnegative'}));
 
 % parse optional variables
 parse(p, varargin{:});
@@ -50,7 +51,9 @@ lbl = sbci_parc.labels(sbci_parc.sorted_idx);
 idx = sbci_parc.sorted_idx(~ismember(lbl, params.roi_mask));
 data = data(idx, idx);
 
-fig = figure();
+fig = figure(params.figid);
+clf;
+
 imagesc(data);
 
 % display a grid of ROIs
