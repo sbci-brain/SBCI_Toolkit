@@ -11,7 +11,8 @@
 %   sbci_map - (struct) A structure containing SBCI mapping information
 %   data - (vector) A vector of data to plot according to the SBCI mapping
 %   varargin - Optional arguments (legend=title to place over colorbar,
-%      clim=limits for colorbar, cmap=colormap, bg=background color
+%      clim=limits for colorbar, cmap=colormap, bg=background color,
+%      figid=id of the generated figure, logscale=display colorbar in log scale
 %
 % OUTPUT:
 %   fig - (figure) handle to the resulting figure
@@ -31,6 +32,7 @@ addParameter(p, 'clim', double([min(data) max(data)]), @isnumeric);
 addParameter(p, 'cmap', 'jet', @ischar);
 addParameter(p, 'bg', 'white', @ischar);
 addParameter(p, 'figid', 1, @(n)validateattributes(n,{'numeric'},{'nonnegative'}));
+addParameter(p, 'logscale', false, @islogical);
 
 % parse optional variables
 parse(p, varargin{:});
@@ -63,7 +65,7 @@ view(-90,0)
 
 % options to make the plot look pretty
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
-lighting gouraud; material dull; shading flat;
+lighting gouraud; material dull; shading interp;
 
 ax(2) = axes('position', [0.07+w+m 0.3 w h]);
 
@@ -75,7 +77,7 @@ view(90,0)
 
 % options to make the plot look pretty
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
-lighting gouraud; material dull; shading flat;
+lighting gouraud; material dull; shading interp;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 ax(3) = axes('position', [0.07+2*(w+m) 0.3 w h]);
@@ -89,7 +91,7 @@ view(-90,0)
 
 % options to make the plot look pretty
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
-lighting gouraud; material dull; shading flat;
+lighting gouraud; material dull; shading interp;
 
 ax(4) = axes('position', [0.07+3*(w+m) 0.3 w h]);
 
@@ -101,7 +103,7 @@ view(90,0)
 
 % options to make the plot look pretty
 daspect([1 1 1]); axis tight; camlight; axis vis3d off;
-lighting gouraud; material dull; shading flat;
+lighting gouraud; material dull; shading interp;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -111,10 +113,13 @@ if params.clim(1) == params.clim(2)
     params.clim = params.clim(1) + [-1 0];
 end
 
-for i=1:length(ax)
-    set(ax(i), 'CLim', params.clim);
-    colormap(ax(i), params.cmap);
-end
+for i=1:length(ax) 
+    set(ax(i), 'CLim', params.clim); 
+    if params.logscale == true
+        set(ax(i), 'ColorScale', 'log') 
+    end
+    colormap(ax(i), params.cmap); 
+end 
 
 % set a colour bar and place it at the bottom 
 cb = colorbar('location', 'South');
