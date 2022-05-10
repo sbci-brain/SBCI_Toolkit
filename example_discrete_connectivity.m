@@ -21,18 +21,19 @@ sc = sc + sc' - 2*diag(diag(sc));
 % Note that here the fourth argument in these functions is 'roi_mask',
 % which is a vector of ROI labels to remove;
 
-my_ROI_list = sbci_parc(11).names;
+my_ROI_list = sbci_parc(11).names; %ROI names
 
 %for Desikan, ROIs 1 and 36 are 'LH_missing' and 'RH_missing'. So let's remove them 
+my_ROI_list([1,36],:) = []; %updated ROI names
 
 dct_fc = parcellate_fc(fc, sbci_parc(11), sbci_mapping, 'roi_mask', [1,36]);
 dct_sc = parcellate_sc(sc, sbci_parc(11), sbci_mapping, 'roi_mask', [1,36]);
 
 %% Plot Continuous Connectivity
-plot_sbci_mat(fc, sbci_parc(3), 'roi_mask', [1,36], 'figid', 1, 'clim', [-0.1, 0.35]);
+plot_sbci_mat(fc, sbci_parc(11), 'roi_mask', [1,36], 'figid', 1, 'clim', [-0.1, 0.35]);
 title('Continuous FC (Desikan)')
 
-plot_sbci_mat(log((10^7*sc) + 1), sbci_parc(3), 'roi_mask', [1,36], 'figid', 2, 'clim', [0, 3.5]);
+plot_sbci_mat(log((10^7*sc) + 1), sbci_parc(11), 'roi_mask', [1,36], 'figid', 2, 'clim', [0, 3.5]);
 title('Continuous SC (Desikan)')
 
 %% Plot Discrete FC
