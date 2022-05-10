@@ -1,3 +1,8 @@
+clear all;
+close all;
+
+addpath(genpath('../SBCI_Toolkit'))
+
 % load example data
 load('./example_data/example_fc.mat')
 load('./example_data/example_sc.mat')
@@ -9,9 +14,19 @@ load('./example_data/example_sc.mat')
 fc = fc + fc' - 2*diag(diag(fc));
 sc = sc + sc' - 2*diag(diag(sc));
 
-% generate discrete connectivity 
-dct_fc = parcellate_fc(fc, sbci_parc(3), sbci_mapping, 'roi_mask', [1,36]);
-dct_sc = parcellate_sc(sc, sbci_parc(3), sbci_mapping, 'roi_mask', [1,36]);
+% In this example, we use Desikan atlas. The 'aparc' atlas in sbci_parc corresponds to the Desikan atlas and
+% sbci_parc(11);
+
+% We use 'parcellate_fc'/'parcellate_sc' to calculate discrete FC/SC. 
+% Note that here the fourth argument in these functions is 'roi_mask',
+% which is a vector of ROI labels to remove;
+
+my_ROI_list = sbci_parc(11).names;
+
+%for Desikan, ROIs 1 and 36 are 'LH_missing' and 'RH_missing'. So let's remove them 
+
+dct_fc = parcellate_fc(fc, sbci_parc(11), sbci_mapping, 'roi_mask', [1,36]);
+dct_sc = parcellate_sc(sc, sbci_parc(11), sbci_mapping, 'roi_mask', [1,36]);
 
 %% Plot Continuous Connectivity
 plot_sbci_mat(fc, sbci_parc(3), 'roi_mask', [1,36], 'figid', 1, 'clim', [-0.1, 0.35]);
