@@ -1,4 +1,4 @@
-# SBCI_Toolkit
+# SBCI_Toolkit for SBCI
 MATLAB scripts for visualisation and analysis of SBCI data
 
 ## Basic usage
