@@ -23,6 +23,7 @@ function [result] = parcellate_fc(data, sbci_parc, sbci_map, varargin)
 
 p = inputParser;
 addParameter(p, 'roi_mask', [], @isnumeric);
+addParameter(p, 'merge_lr', false, @islogical);
 
 % parse optional variables
 parse(p, varargin{:});
@@ -33,7 +34,7 @@ was_triangular = false;
 % symmeterise the matrix for sorting
 if istriu(data) || istril(data)
     was_triangular = true;
-    data = data + data';
+    data = data + data' - diag(diag(data));
 end
 
 % sanity check
@@ -44,10 +45,18 @@ end
 % sort the matrix by ROI
 data = data - diag(diag(data));
 data = data(sbci_parc.sorted_idx, sbci_parc.sorted_idx);
-data = triu(data);
 
 % load and sort the labels by ROI
 labels = sbci_parc.labels(sbci_parc.sorted_idx);
+names = string(sbci_parc.names);
+
+if params.merge_lr == true
+    names = regexprep(names,{'^LH_','^RH_'},{'',''});
+    
+    [~,~,idx] = unique(names, 'stable');
+    labels = int64(idx(labels)');
+end
+    
 rois = unique(labels);
 
 p = length(rois);
