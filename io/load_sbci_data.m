@@ -8,8 +8,9 @@
 %
 % INPUT:
 %   sbci_location - (string) location of the SBCI_AVG output folder
-%   resolution - (float) value between 0-1 corresponding the the resolution
-%       of SBCI mappings required.
+%   resolution - (string) value between 0-1 corresponding the the resolution
+%       of SBCI mappings required, or a string ico# where # is a number 
+%       between 1-7.
 %
 % OUTPUT:
 %   sbci_parc - (struct array) structures containing all the processed
@@ -24,14 +25,17 @@
 %
 function [sbci_parc, sbci_mapping, adjacency] = load_sbci_data(sbci_location, resolution)
 
+% make sure input is a string
+resolution = string(resolution);
+
 % load the mapping and adjacency matrix at the given resolution
-tmp = load(sprintf('%s/mapping_avg_%.2f.mat', sbci_location, resolution));
+tmp = load(sprintf('%s/mapping_avg_%s.mat', sbci_location, resolution));
 sbci_mapping = tmp.sbci_map;
-tmp = load(sprintf('%s/adjacency_%.2f.mat', sbci_location, resolution));
+tmp = load(sprintf('%s/adjacency_%s.mat', sbci_location, resolution));
 adjacency = tmp.adjacency;
 
 % find all the parcellation files
-files = dir(sprintf('%s/*_avg_roi_%.2f.mat', sbci_location, resolution));
+files = dir(sprintf('%s/*_avg_roi_%s.mat', sbci_location, resolution));
 
 for i=1:length(files)
     parc = load(sprintf('%s/%s', sbci_location, files(i).name));
