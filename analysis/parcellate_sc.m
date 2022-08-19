@@ -23,6 +23,7 @@ function [result] = parcellate_sc(data, sbci_parc, sbci_map, varargin)
 
 p = inputParser;
 addParameter(p, 'roi_mask', [], @isnumeric);
+addParameter(p, 'merge_lr', false, @islogical);
 
 % parse optional variables
 parse(p, varargin{:});
