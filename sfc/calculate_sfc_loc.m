@@ -26,6 +26,7 @@ function [sfc_loc] = calculate_sfc_loc(sc, fc, sbci_parc, varargin)
 p = inputParser;
 addParameter(p, 'triangular', false, @islogical);
 addParameter(p, 'min_area', 10, @(n)validateattributes(n,{'numeric'},{'nonnegative'}));
+addParameter(p, 'merge_lr', false, @islogical);
     
 % parse optional variables
 parse(p, varargin{:});
@@ -44,6 +45,18 @@ fc = fc - diag(diag(fc));
 % somewhere to place the results
 sfc_loc = nan(size(fc, 1),1);
 
+% load parcelation rois
+labels = sbci_parc.labels;
+names = string(sbci_parc.names);
+
+% merge left and right hemispheres
+if params.merge_lr == true
+    names = regexprep(names,{'^LH_','^RH_'},{'',''});
+    
+    [~,~,idx] = unique(names, 'stable');
+    labels = int64(idx(labels)');
+end
+
 % find constant columns, the indices 
 % of constants will be set equal to NaN
 nanmask = ~all(~diff(fc)) & ~all(~diff(sc));
@@ -51,7 +64,7 @@ nanmask = ~all(~diff(fc)) & ~all(~diff(sc));
 % remove constant columns
 fc = fc(nanmask, nanmask);
 sc = sc(nanmask, nanmask);
-labels = sbci_parc.labels(nanmask);
+labels = labels(nanmask);
 
 % calculate local SFC
 rois = unique(labels);
