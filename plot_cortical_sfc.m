@@ -19,11 +19,7 @@
 % ASSUMPTIONS AND LIMITATIONS:
 %   None
 
-function plot_cortical_sfc(fc, sc, sbci_surf, sbci_mapping, sbci_parc, atlas_num)
-    % calculate global and local SFC
-    % For specific glocal and local SFC definations refers to: 文章
-    sfc_gbl = calculate_sfc_gbl(sc, fc, 'triangular', true);
-    sfc_loc = calculate_sfc_loc(sc, fc, sbci_parc(atlas_num), 'triangular', true);
+function plot_cortical_sfc(sfc_gbl, sfc_loc, sbci_surf, sbci_mapping, sbci_parc, atlas_num)
 
     sfc_gbl(isnan(sfc_gbl)) = 0;
     sfc_loc(isnan(sfc_loc)) = 0;
