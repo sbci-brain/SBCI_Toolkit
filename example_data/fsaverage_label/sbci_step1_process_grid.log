@@ -1,0 +1,199 @@
+Sourcing SBCI config file
+Begin processing SBCI grid: Mon Mar 25 22:47:14 EDT 2024
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_white_avg.vtk as a surface
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_white_avg.vtk as a surface
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_sphere_avg.vtk as a surface
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_sphere_avg.vtk as a surface
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_inflated_avg.vtk as a surface
+Saving /nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_inflated_avg.vtk as a surface
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_sphere_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_sphere_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//mapping_avg_ico4.npz".
+INFO:root:Loading .vtk surfaces, mapping, and intersections.
+INFO:root:Snapping mesh to nearest downsampled vertices.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_white_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_white_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_inflated_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_inflated_avg_ico4.vtk".
+INFO:root:Resampling to ico surface resolution: 4.
+INFO:root:Original resolution is: 7
+INFO:root:Merging triangles to ico6
+INFO:root:Merging triangles to ico5
+INFO:root:Merging triangles to ico4
+/nas/longleaf/home/tianrui/anaconda2/envs/sbci/lib/python2.7/site-packages/vtk/util/numpy_support.py:137: FutureWarning: Conversion of the second argument of issubdtype from `complex` to `np.complexfloating` is deprecated. In future, it will be treated as `np.complex128 == np.dtype(complex).type`.
+  assert not numpy.issubdtype(z.dtype, complex), \
+INFO:root:Loading and converting the .vtk surface.
+INFO:root:Loading and converting the .vtk surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_grid_avg_ico4.m".
+INFO:root:Loading and normalising the .m surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_grid_avg_ico4.m".
+INFO:root:Loading and normalising the .m surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_grid_avg_ico4.vtk".
+INFO:root:Loading and normalising the .vtk surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_grid_avg_ico4.vtk".
+INFO:root:Loading and normalising the .vtk surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//lh_sphere_avg_norm.vtk".
+INFO:root:Loading and normalising the .vtk surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//rh_sphere_avg_norm.vtk".
+INFO:root:Loading and normalising the .vtk surface.
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//grid_coords_ico4.mat".
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//grid_coords_ico4.npz".
+INFO:root:Overwriting "/nas/longleaf/home/tianrui/ABCD/SBCI_AVG//adjacency_ico4.mat".
+Processing Parcellation: aparc.a2005s
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 77
+INFO:root:Number of RH ROIs: 78
+Processing Parcellation: aparc.a2009s
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 75
+INFO:root:Number of RH ROIs: 75
+Processing Parcellation: aparc
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 35
+INFO:root:Number of RH ROIs: 35
+Processing Parcellation: BN_Atlas
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 107
+INFO:root:Number of RH ROIs: 106
+Processing Parcellation: HCPMMP1
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 181
+INFO:root:Number of RH ROIs: 181
+Processing Parcellation: oasis.chubs
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 9
+INFO:root:Number of RH ROIs: 9
+Processing Parcellation: PALS_B12_Brodmann
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 42
+INFO:root:Number of RH ROIs: 41
+Processing Parcellation: PALS_B12_Lobes
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 6
+INFO:root:Number of RH ROIs: 6
+Processing Parcellation: PALS_B12_OrbitoFrontal
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 24
+INFO:root:Number of RH ROIs: 25
+Processing Parcellation: PALS_B12_Visuotopic
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 13
+INFO:root:Number of RH ROIs: 13
+Processing Parcellation: Schaefer2018_1000Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 500
+INFO:root:Number of RH ROIs: 501
+Processing Parcellation: Schaefer2018_100Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 51
+INFO:root:Number of RH ROIs: 51
+Processing Parcellation: Schaefer2018_200Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 101
+INFO:root:Number of RH ROIs: 101
+Processing Parcellation: Schaefer2018_300Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 151
+INFO:root:Number of RH ROIs: 151
+Processing Parcellation: Schaefer2018_400Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 201
+INFO:root:Number of RH ROIs: 201
+Processing Parcellation: Schaefer2018_500Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 251
+INFO:root:Number of RH ROIs: 251
+Processing Parcellation: Schaefer2018_600Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 301
+INFO:root:Number of RH ROIs: 301
+Processing Parcellation: Schaefer2018_700Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 351
+INFO:root:Number of RH ROIs: 351
+Processing Parcellation: Schaefer2018_800Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 401
+INFO:root:Number of RH ROIs: 401
+Processing Parcellation: Schaefer2018_900Parcels_7Networks_order
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 451
+INFO:root:Number of RH ROIs: 450
+Processing Parcellation: Yeo2011_17Networks_N1000
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 18
+INFO:root:Number of RH ROIs: 18
+Processing Parcellation: Yeo2011_7Networks_N1000
+INFO:root:Number of LH vertices: 2562
+INFO:root:Number of RH vertices: 2562
+INFO:root:Number of LH ROIs: 8
+INFO:root:Number of RH ROIs: 8
+Finished processing SBCI grid: Tue Mar 26 02:06:39 EDT 2024
