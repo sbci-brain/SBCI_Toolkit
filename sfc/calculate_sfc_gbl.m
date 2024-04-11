@@ -31,11 +31,12 @@ params = p.Results;
 if (params.triangular == true)
     sc = sc + sc';
     fc = fc + fc';   
+    % remove diagonal elements
+    sc = sc - diag(diag(sc)); 
+    fc = fc - diag(diag(fc));
 end
 
-% remove diagonal elements
-sc = sc - diag(diag(sc)); 
-fc = fc - diag(diag(fc));
+
 
 % somewhere to place the results
 sfc_gbl = nan(size(fc, 1),1);
