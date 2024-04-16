@@ -1,20 +1,18 @@
 clear all;
 close all;
-% set ico level, 'ico4' as default
-% ICO4 represents the fourth level of refined triangular mesh 
-% for higher resolution brain surface analysis in neuroimaging.
-% This result in a spherical representation with 5,120 faces, which means
-% FC and SC matrix are square matrix with 5120 dimensions.
+% Set the ICO level for high-resolution brain surface analysis. Default is 'ico4', 
+% which uses a refined triangular mesh with 5,120 faces suitable for neuroimaging.
 % This is a option in SBCI Pipeline.
 icoLevel = 'ico4';
 
-% add path to local environment before first use
+% Add paths to the local environment before first use.
 addpath('./io');
 addpath('./plotting');
 addpath('./sfc');
 addpath('./example_data/');
 addpath('./analysis');
-% load sbci average data
+
+% Load average data and surface from the SBCI pipeline.
 [sbci_parc, sbci_mapping, ~] = load_sbci_data('example_data/fsaverage_label', icoLevel);
 sbci_surf = load_sbci_surface('example_data/fsaverage_label');
 
@@ -49,6 +47,8 @@ fc = fc + fc' - 2*diag(diag(fc));
 sc = sc + sc' - 2*diag(diag(sc));
 % Normalize sc matrix
 sc = sc/sum(sum(sc));
+
+% TODO: write a summary sentence
 
 % 1. Display of High-Resolution fc and sc matrix
 plot_sbci_mat(fc, sbci_parc(atlas_index), 'roi_mask', roi_exclusion_index, 'figid', 1, 'clim', [-0.1, 0.35]);
