@@ -158,7 +158,7 @@ handle = get(cb, 'Title');
 set(handle, 'String', params.legend);
 
 % set the background colour and set the aspect ratio
-set(gcf,'Color','white')
+set(gcf,'Color',params.bg)
 pos = get(gcf, 'Position');
 set(gcf, 'Color', params.bg, 'InvertHardcopy', 'off', ...
     'Position', [pos(1), pos(2), pos(3), pos(3) / 2.5]);
