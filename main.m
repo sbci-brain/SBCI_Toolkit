@@ -25,8 +25,11 @@ load(fcFileName);
 
 % Set and Display the atlas currently in use.
 % atlas name can be found by `sbci_parc.atlas`
-atlas_index = 21; % Example using 'aparc' atlas
+atlas_index = 42; % Example using 'aparc' atlas
 disp(fprintf('the atlas current use is: %s', sbci_parc(atlas_index).atlas{1}));
+
+% plot the parcellation
+plot_parce(sbci_surf, sbci_mapping,1:50)
 
 % Define indices for regions to exclude from analysis (non-meaningful brain regions).
 % Specific ROI Names can be found by `sbci_parc.names`
