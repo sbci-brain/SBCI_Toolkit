@@ -7,9 +7,14 @@
 clear all;
 close all;
 
-addpath(genpath('./matlab'))
-
-subject = 'sub-NDARINV0D5J9T8P/ses-2YearFollowUpYArm1/psc_sbci_final_files/sbci_connectome/';
+% Add required directories to the path for the initial setup.
+addpath('./io');
+addpath('./plotting');
+addpath('./sfc');
+addpath('./example_data/fsaverage_label/');
+addpath('./example_data/SBCI_Individual_Subject_Outcome/');
+addpath('./analysis');
+addpath('./endingpoint');
 
 % Load the grid of the given resolution: here we can choose from the
 % following surfaces:
@@ -21,7 +26,7 @@ ico_grid = load('./example_data/fsaverage_label/template_white_grid_ico4.mat');
 %ico_grid = load('./endpoints_abcd_fixed/SBCI_AVG/template_sphere_grid_ico4.mat');
 
 % Get the data for a single subject
-subject_data = load(sprintf('./example_data/SBCI_Individual_Subject_Outcome/mesh_intersections_ico4.mat', subject));
+subject_data = load('./example_data/SBCI_Individual_Subject_Outcome/mesh_intersections_ico4.mat');
 
 % Get the cartesian coordinates for the given mesh
 [coords_in, coords_out, surf_in, surf_out] = get_endpoint_coords(ico_grid, subject_data);
