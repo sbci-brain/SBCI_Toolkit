@@ -28,9 +28,6 @@ load(fcFileName);
 atlas_index = 42; % Example using 'aparc' atlas
 disp(fprintf('the atlas current use is: %s', sbci_parc(atlas_index).atlas{1}));
 
-% plot the parcellation
-plot_parce(sbci_surf, sbci_mapping,1:50)
-
 % Define indices for regions to exclude from analysis (non-meaningful brain regions).
 % Specific ROI Names can be found by `sbci_parc.names`
 roi_exclusion_index = [1,36]; % Index 1: 'LH_missing', Index 36: 'RH_missing'
