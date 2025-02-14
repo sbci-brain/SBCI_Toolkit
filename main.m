@@ -33,11 +33,8 @@ disp(fprintf('the atlas current use is: %s', sbci_parc(atlas_index).atlas{1}));
 roi_exclusion_index = [1,36]; % Index 1: 'LH_missing', Index 36: 'RH_missing'
 
 
-% Symmetrize and normalize the connectivity matrices, removing diagonal elements.
-fc = fc + fc' - 2*diag(diag(fc));
+% Symmetrize the connectivity matrices & removing diagonal elements.
 sc = sc + sc' - 2*diag(diag(sc));
-sc = sc/sum(sum(sc)); % Normalize SC matrix
-
 
 
 % Transition to manipulation and visualization of connectivity matrices for brain network analysis.
