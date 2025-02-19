@@ -22,7 +22,7 @@ plot_parce(sbci_surf.inflated, sbci_mapping, sbci_parc(25).labels)
 plot_parce(sbci_surf.white, sbci_mapping, sbci_parc(9).labels)
 
 % A parcellation can also be outlined on top of another parcellation using
-% the overlay_parc argument
+% the overlay_parc argument (Supplying this argument will slow runtime) 
 % Outline Glasser parcellation on top of CoCoNest-250 parcellation
 plot_parce(sbci_surf.inflated, sbci_mapping, sbci_parc(9).labels, ...
     'overlay_parc',sbci_parc(25))
