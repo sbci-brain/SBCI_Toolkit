@@ -40,6 +40,7 @@ if isempty(params.my_cols)
 else
     lab_color = params.my_cols; 
 end
+color_iter = 1; 
 
 % upsample data to the high resolution meshes
 upsampled_data = zeros(sbci_map.shape(4), 1);
@@ -81,8 +82,8 @@ for i = 1:length(unique_labs)
     surf_idx = sum(is_member)>1; 
 
     trimesh(surf.tri(surf_idx,:), surf.vtx(1,:), surf.vtx(2,:), surf.vtx(3,:),...
-       'FaceColor', lab_color(unique_labs(i),:), 'EdgeColor',lab_color(unique_labs(i),:),'FaceAlpha',0.8);
-
+       'FaceColor', lab_color(color_iter,:), 'EdgeColor',lab_color(color_iter,:),'FaceAlpha',0.8);
+    color_iter = color_iter + 1; 
 end
 if ~isempty(params.overlay_parc)
     draw_boundary_lines(surf, upsampled_overlay(1:sbci_map.shape(5)));
@@ -125,8 +126,8 @@ for i = 1:length(unique_labs)
     
     surf_idx = sum(is_member)>1;   
     trimesh(surf.tri(surf_idx,:), surf.vtx(1,:), surf.vtx(2,:), surf.vtx(3,:),...
-       'FaceColor', lab_color(unique_labs(i),:), 'EdgeColor',lab_color(unique_labs(i),:),'FaceAlpha',0.8);
-
+       'FaceColor', lab_color(color_iter,:), 'EdgeColor',lab_color(color_iter,:),'FaceAlpha',0.8);
+    color_iter = color_iter + 1; 
     
 end
 if ~isempty(params.overlay_parc)
@@ -143,6 +144,7 @@ title(ax4, 'Right Hemisphere - Back')
 view(ax4, 90, 0)
 axis off;
 
+set(gcf, 'Color', 'w');
 result = 1;
 end
 
