@@ -124,3 +124,12 @@ plot_value_cortically(sbci_surf, sbci_mapping, 'example.txt');
 ```
 
 ![](https://raw.githubusercontent.com/ytr1023/img/main/value.png)
+
+### **Display Parcellation on SBCI Cortical Surface**
+
+Visualizes a parcellation on the inflated, white, or sphere SBCI cortical surface. 
+
+```matlab
+plot_parce(sbci_surf.inflated, sbci_mapping, sbci_parc(25).labels) # Glasser Parcellation
+```
+![](https://github.com/ajallenunc/img/blob/main/plot_parce_ex.png?raw=true)
