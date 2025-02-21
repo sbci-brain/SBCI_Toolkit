@@ -53,6 +53,7 @@ Below is a list of available brain parcellations that can be accessed via the `a
 | 20    | aparc.a2009s                             |
 | 21    | aparc                                    |
 | 22    | oasis.chubs                              |
+| ...    | ...                           |
 
 To view and select a specific atlas for your analysis, you can adjust the `atlas_index` parameter accordingly. For example, to use the `aparc`:
 
