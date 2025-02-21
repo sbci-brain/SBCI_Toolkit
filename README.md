@@ -27,7 +27,7 @@ Additionally, example data is available in the directory `example_data/SBCI_Indi
 
 The `atlas_index` parameter specifies the index within the `sbci_parc` array that selects a particular brain parcellation for analysis. The `sbci_parc` array contains detailed information about each atlas, including its name and specific partitions. This setup allows users to access and utilize various brain parcellations supported by the toolkit.
 
-Below is a list of available brain parcellations that can be accessed via the `atlas_index`:
+Below is a growing list of available brain parcellations that can be accessed via the `atlas_index`:
 
 | Index | Parcellation Name                        |
 | ----- | ---------------------------------------- |
