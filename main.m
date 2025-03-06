@@ -28,7 +28,7 @@ load(fcFileName);
 atlas_index = 42; % Example using 'aparc' atlas
 disp(fprintf('the atlas current use is: %s', sbci_parc(atlas_index).atlas{1}));
 
-% Define indices for regions to exclude from analysis (non-meaningful brain regions).
+% Define indices for regions to exclude from analysis (they are typically non-meaningful brain regions).
 % Specific ROI Names can be found by `sbci_parc.names`
 roi_exclusion_index = [1,36]; % Index 1: 'LH_missing', Index 36: 'RH_missing'
 
@@ -37,7 +37,7 @@ roi_exclusion_index = [1,36]; % Index 1: 'LH_missing', Index 36: 'RH_missing'
 sc = sc + sc' - 2*diag(diag(sc));
 
 
-% Transition to manipulation and visualization of connectivity matrices for brain network analysis.
+% Manipulation and visualization of connectivity matrices for brain network analysis.
 
 % Visualize high-resolution FC and SC matrices.
 plot_sbci_mat(fc, sbci_parc(atlas_index), 'roi_mask', roi_exclusion_index, 'figid', 1, 'clim', [-0.1, 0.35]);
@@ -50,12 +50,12 @@ title(['Continuous SC (' sbci_parc(atlas_index).atlas{1} ')'], 'Interpreter', 'n
 adjust_connectivity_res_for_fc(fc, sbci_parc, atlas_index, sbci_mapping, roi_exclusion_index);
 adjust_connectivity_res_for_sc(sc, sbci_parc, atlas_index, sbci_mapping, roi_exclusion_index);
 
-% Compute and display surface functional connectivity (SFC).
+% Compute and display surface structural-functional coupling (SFC).
 sfc_gbl = calculate_sfc_gbl(sc, fc, 'triangular', false);
 sfc_loc = calculate_sfc_loc(sc, fc, sbci_parc(atlas_index), 'triangular', false);
 plot_cortical_sfc(sfc_gbl, sfc_loc, sbci_surf, sbci_mapping, sbci_parc, atlas_index);
 
-% Display any value on txt file to the surface.
+% Display values from the txt file to the surface.
 plot_value_cortically(sbci_surf, sbci_mapping, 'example.txt')
 
 
