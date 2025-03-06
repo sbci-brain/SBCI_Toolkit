@@ -105,7 +105,7 @@ adjust_connectivity_res_for_sc(sc, sbci_parc, atlas_index, sbci_mapping, roi_exc
 
 ### **Compute and Display SFC on the Cortical Surface**
 
-Computes and visualizes both global and local surface functional connectivity (SFC) directly on the cortical surface. This function leverages connectivity data alongside surface mapping and parcellation details to provide a detailed view of connectivity patterns.
+Computes and visualizes both global and local structural-functional coupling (SFC) directly on the cortical surface. 
 
 ```matlab
 sfc_gbl = calculate_sfc_gbl(sc, fc, 'triangular', false);
@@ -118,7 +118,7 @@ plot_cortical_sfc(sfc_gbl, sfc_loc, sbci_surf, sbci_mapping, sbci_parc, atlas_in
 
 ### **Display Scalar Value on the SBCI Cortical Surface**
 
-Enables the visualization of scalar values such as genetic heritability or cortical thickness on the cortical surface. This feature utilizes the surface mapping and parcellation data to overlay scalar data effectively.
+Enables the visualization of scalar values such as genetic heritability or cortical thickness on the cortical surface.
 
 ```matlab
 plot_value_cortically(sbci_surf, sbci_mapping, 'example.txt');
