@@ -16,13 +16,13 @@ clc;          % Clear the command window
 
 %% Add Required Paths
 % Add directories that contain necessary functions and data.
-addpath('./io');
-addpath('./plotting');
-addpath('./sfc');
-addpath('./example_data/fsaverage_label/');
-addpath('./example_data/SBCI_Individual_Subject_Outcome/');
-addpath('./analysis');
-addpath('./endingpoint');
+addpath('io');
+addpath('plotting');
+addpath('sfc');
+addpath('example_data/fsaverage_label/');
+addpath('example_data/SBCI_Individual_Subject_Outcome/');
+addpath('analysis');
+addpath('endpoints');
 
 %% Load Grid and Subject Data
 % Choose one of the following templates (uncomment the one you wish to use):
