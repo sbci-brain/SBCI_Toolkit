@@ -27,11 +27,11 @@ addpath('endpoints');
 %% Load Grid and Subject Data
 % Choose one of the following templates (uncomment the one you wish to use):
 % 1. White surface
-gridFile = './example_data/fsaverage_label/template_white_grid_ico4.mat';
+%gridFile = './example_data/fsaverage_label/template_white_grid_ico4.mat';
 % 2. Inflated white surface
 % gridFile = './example_data/fsaverage_label/template_inflated_grid_ico4.mat';
 % 3. Sphere surface
-% gridFile = './endpoints_abcd_fixed/SBCI_AVG/template_sphere_grid_ico4.mat';
+gridFile = './example_data/fsaverage_label/template_sphere_grid_ico4.mat';
 
 ico_grid = load(gridFile);
 
