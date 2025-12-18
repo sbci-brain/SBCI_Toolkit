@@ -45,7 +45,7 @@ parc_idx = 44;  % Change this to select different parcellation
 parc_labels = sbci_parc(parc_idx).labels;
 
 % Get number of left hemisphere vertices
-n_lh = double(sbci_mapping.shape(5));  % Number of left hemisphere vertices (typically 2562 for ico4)
+n_lh = double(sbci_mapping.shape(2));  % Number of left hemisphere vertices (typically 2562 for ico4)
 
 % Convert local hemisphere indices to global indices
 % Left hemisphere (surf_in == 0): global_idx = vtx_in (1 to n_lh)
